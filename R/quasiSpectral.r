@@ -27,7 +27,7 @@ quasiSpectral <- function(spectralDataAll, n.mut, n.wt) {
 
   ### Analyze using QL, QLShrink and QLSpline methods applied to quasi-Poisson model
 
-  fit <- QL.fit(spectralDataUse, design.list,log.offset=log.offset, Model="Poisson")
+  fit <- QL.fit(spectralDataUse, design.list,log.offset=log.offset, Model="Poisson", print.progress=F)
   results <- QL.results(fit)
 
 

@@ -1,0 +1,37 @@
+---
+title: "quasispectral"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{quasispectral-vignette}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+## Using quasispectral
+To download the library, first install the "devtools" package, then install the quasispectral package:
+
+#install.packages("devtools")
+#devtools::install_github("mooredf22/quasispectral")
+
+
+Next, load the library:
+```{r, echo=TRUE}
+library(quasispectral)
+library(QuasiSeq)
+```
+
+Finally, call the package as follows, and look at the first few lines of output:
+```{r, echo=TRUE}
+result.QLfit <- quasiSpectral(spectralDataAll=spectralData_CLN1_late, n.mut=6, n.wt=6)
+```
+```{r, echo=TRUE}
+QLfit.out <- result.QLfit$QLfit
+head(QLfit.out)
+result.QLfit$eta0     # estimated proportion of null samples in population
+```
