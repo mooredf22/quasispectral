@@ -48,7 +48,7 @@ quasiSpectral <- function(spectralDataAll, n.mut, n.wt) {
 
   # convert coefficients to log base 2
   coef.main <- fit$coefficients[,2] / log(2)
-  set maximum and minimum
+  #set maximum and minimum
   max.value <- 16           # 2^4
   coef.main[coef.main > 16] <- 16
   coef.main[coef.main < -16] <- -16

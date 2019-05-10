@@ -1,11 +1,23 @@
-Package: quasiSpectral
-Type: Package
-Title: What the Package Does (Title Case)
-Version: 0.1.0
-Author: Who wrote it
-Maintainer: The package maintainer <yourself@somewhere.net>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
-License: What license is it under?
+Package: quasispectral
+Title: Compute log2 ratios of spectral count data
+Version: 0.2.1
+Date: 2019-03-28
+Authors@R: 
+    person(given = "Dirk",
+           family = "Moore",
+           role = c("aut", "cre"),
+           email = "dirk.moore@rutgers.edu")
+Description: Fits quasiSeq model to spectral count data, returning log2 ratios.
+License: GPL (>= 2)
 Encoding: UTF-8
 LazyData: true
+Depends: R (>= 3.5.0)
+RoxygenNote: 6.1.1.9000
+Imports: 
+    QuasiSeq
+    fdrtool
+Suggests: 
+    knitr,
+    rmarkdown
+VignetteBuilder: knitr
+URL: http//github.com/mooredf22/quasispectral
