@@ -14,7 +14,7 @@ LazyData: true
 Depends: R (>= 3.5.0)
 RoxygenNote: 6.1.1.9000
 Imports: 
-    QuasiSeq
+    QuasiSeq,
     fdrtool
 Suggests: 
     knitr,
