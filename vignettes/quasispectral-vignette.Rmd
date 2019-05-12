@@ -1,5 +1,7 @@
 ---
 title: "quasispectral"
+author: "Dirk Moore"
+date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{quasispectral-vignette}
@@ -14,17 +16,28 @@ knitr::opts_chunk$set(
 )
 ```
 ## Using quasispectral
-To download the library, first install the "devtools" package, then install the quasispectral package:
+To download the library, first install the "devtools" package, which will allow you to install packages from github; this only needs to be done once:
 
-#install.packages("devtools")
-#devtools::install_github("mooredf22/quasispectral")
+`install.packages("devtools")`
 
+Then install the quasispectral package from github:
 
-Next, load the library:
+`devtools::install_github("mooredf22/quasispectral")`
+
+This will make the functions and data in the package available to you in R.
+
+Next, load the libraries; the libraries `QuasiSeq` and `fdrtool` must have been previously installed from CRAN.
 ```{r, echo=TRUE}
-library(quasispectral)
 library(QuasiSeq)
+library(fdrtool)
+library(quasispectral)
+
 ```
+The first few lines of the data may be examined:
+```{r, echo=TRUE}
+head(spectralData_CLN1_late)
+```
+The first column is the gene name, the next 6 columns are spectral counts for mutant animals, and the final 6 columns are counts for wildtype animals.
 
 Finally, call the package as follows, and look at the first few lines of output:
 ```{r, echo=TRUE}
@@ -33,5 +46,9 @@ result.QLfit <- quasiSpectral(spectralDataAll=spectralData_CLN1_late, n.mut=6, n
 ```{r, echo=TRUE}
 QLfit.out <- result.QLfit$QLfit
 head(QLfit.out)
+```
+To see the estimated proportion of null samples in the population, from `fdrtool`, look at `eta0`:
+
+```{r, echo=TRUE}
 result.QLfit$eta0     # estimated proportion of null samples in population
 ```
