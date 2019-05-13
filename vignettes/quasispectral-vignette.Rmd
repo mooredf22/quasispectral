@@ -20,6 +20,21 @@ To download the library, first install the "devtools" package, which will allow 
 
 `install.packages("devtools")`
 
+Next, install the `edgeR` package. To to this, you will need to first install the "biocLite" package, which allows you to access
+code from bioconductor:
+
+`source("https://bioconductor.org/biocLite.R")`
+
+Now you can get `edgeR` as follows:
+
+`biocLite("edgeR")`
+
+When asked, allow R to compile and install the package. This will take a few minutes.
+
+Next, install the `fdrtools` package, which computes qvalues:
+
+`install.packages("fdrtools")'
+
 Then install the quasispectral package from github:
 
 `devtools::install_github("mooredf22/quasispectral")`
@@ -47,6 +62,8 @@ result.QLfit <- quasiSpectral(spectralDataAll=spectralData_CLN1_late, n.mut=6, n
 QLfit.out <- result.QLfit$QLfit
 head(QLfit.out)
 ```
+The first columns give the gene names and spectral count data that were input into the `quasispectral` function. The column "coef.main" is the log2 ratio of the estimated mean for wild type animals compared to the estimated mean for mutant animals.
+
 To see the estimated proportion of null samples in the population, from `fdrtool`, look at `eta0`:
 
 ```{r, echo=TRUE}
