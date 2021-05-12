@@ -20,20 +20,24 @@ To download the library, first install the "devtools" package, which will allow 
 
 `install.packages("devtools")`
 
-Next, install the `edgeR` package. To to this, you will need to first install the "biocLite" package, which allows you to access
+Next, install the `edgeR` package. To to this, you will need to first install the "BiocManager" package, which allows you to access
 code from bioconductor:
 
-`source("https://bioconductor.org/biocLite.R")`
+```
+if (!requireNamespace("BiocManager", quietly = TRUE))
+    install.packages("BiocManager")
+BiocManager::install(version = "3.12")
+```
 
 Now you can get `edgeR` as follows:
 
-`biocLite("edgeR")`
+`BiocManager::install("edgeR")`
 
 When asked, allow R to compile and install the package. This will take a few minutes.
 
 Next, install the `fdrtools` package, which computes qvalues:
 
-`install.packages("fdrtools")'
+`install.packages("fdrtool")'
 
 Then install the quasispectral package from github:
 
